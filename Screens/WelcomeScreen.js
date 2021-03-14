@@ -91,7 +91,7 @@ export default class WelcomeScreen extends React.Component{
     }
 
     login = (email, password) => {
-        firebase.auth().signInWithEmailAndPassword(email, password).then(() => {return Alert.alert("Login Successful")})
+        firebase.auth().signInWithEmailAndPassword(email, password).then(() => {console.log("here");this.props.navigation.navigate('DonateBooks')})
         .catch((error) => {return Alert.alert(error.message())})
     }
 
