@@ -128,21 +128,21 @@ export default class WelcomeScreen extends React.Component{
                     <Text style = {{fontWeight: 'bold', textDecoration: 'underline'}}> Book Santa </Text>
 
                     <SantaAnimation/>
-
-                    <TextInput style = {{borderRadius: 5, borderWidth: 2.5, width: 150, height: 25,  margin: 10}}
-                               placeholder = "example@booksanta.com"
-                               placeholderTextColor = "#fff"
-                               keyboardType = "email-address"
-                               onChangeText = {text => {this.setState({email: text})}}
-                    />
-
-                    <TextInput style = {{borderRadius: 5, borderWidth: 2.5, width: 150, height: 25, margin: 10}}
-                               placeholder = "password"
-                               placeholderTextColor = "#fff"
-                               secureTextEntry = {true}
-                               onChangeText = {text => {this.setState({password: text})}}
-                    />
-                
+                    <KeyboardAvoidingView>
+                        <TextInput style = {{borderRadius: 5, borderWidth: 2.5, width: 150, height: 25,  margin: 10}}
+                                   placeholder = "example@booksanta.com"
+                                   placeholderTextColor = "#fff"
+                                   keyboardType = "email-address"
+                                   onChangeText = {text => {this.setState({email: text})}}
+                        />
+    
+                        <TextInput style = {{borderRadius: 5, borderWidth: 2.5, width: 150, height: 25, margin: 10}}
+                                   placeholder = "password"
+                                   placeholderTextColor = "#fff"
+                                   secureTextEntry = {true}
+                                   onChangeText = {text => {this.setState({password: text})}}
+                        />
+                    </KeyboardAvoidingView>
 
                     <TouchableOpacity style = {{height: 30, width:55, backgroundColor: "red", borderWidth: 2, margin: 15}}
                                       onPress = {() => {this.login(this.state.email, this.state.password)}}
