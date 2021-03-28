@@ -142,6 +142,7 @@ export default class WelcomeScreen extends React.Component{
                                    secureTextEntry = {true}
                                    onChangeText = {text => {this.setState({password: text})}}
                         />
+                        
                     </KeyboardAvoidingView>
 
                     <TouchableOpacity style = {{height: 30, width:55, backgroundColor: "red", borderWidth: 2, margin: 15}}

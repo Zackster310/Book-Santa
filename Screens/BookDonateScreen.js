@@ -4,7 +4,7 @@ import firebase from 'firebase'
 import db from '../config'
 import MyHeader from '../components/MyHeader'
 import { FlatList } from 'react-native'
-import { ListItem } from 'react-native-elements/dist/list/ListItem'
+import { ListItem } from 'react-native-elements'
 
 export default class BookDonateScreen extends React.Component{
 
@@ -21,6 +21,7 @@ export default class BookDonateScreen extends React.Component{
             var requestedBookList = snapshot.docs.map(document => document.data())
             this.setState({requestedBooks: requestedBookList})
         })
+        console.log(this.state.requestedBooks + "Requested Books")
     }
 
     componentDidMount(){
@@ -47,7 +48,7 @@ export default class BookDonateScreen extends React.Component{
             <View style = {{flex: 1}}>
                 <MyHeader title = "Donate Books" navigation = {this.props.navigation}/>
 
-                <View style = {{flex:1}}>
+                <View>
                     {this.state.requestedBooks.length === 0?
                     (<Text> List of All Requested Books </Text>): (
                         <FlatList keyExtractor = {this.keyExtractor} data = {this.state.requestedBooks} renderItem = {this.renderItem}/>
